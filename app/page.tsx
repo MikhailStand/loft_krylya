@@ -1,5 +1,6 @@
 /* oxlint-disable next/no-img-element */
-import { ArrowRight, ArrowUpRight, ChefHat, MapPin, UsersRound } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, MapPin } from 'lucide-react';
+import { HeroGallery } from '@/components/hero-gallery';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 import { assetPath, sitePath } from '@/lib/site';
@@ -45,31 +46,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero__visual" aria-label="Светлый и тёмный залы">
-            <figure className="hero-shot hero-shot--light">
-              <img src={assetPath('/images/light-hero.jpg')} alt="Светлый зал LOFT Крылья" />
-              <figcaption>Светлый зал</figcaption>
-            </figure>
-            <figure className="hero-shot hero-shot--dark">
-              <img src={assetPath('/images/dark-hero.jpg')} alt="Тёмный зал LOFT Крылья" />
-              <figcaption>Тёмный зал</figcaption>
-            </figure>
-            <div className="hero__stamp" aria-hidden="true">
-              <svg className="hero__stamp-orbit" viewBox="0 0 120 120">
-                <defs><path id="stamp-circle" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" /></defs>
-                <text><textPath href="#stamp-circle">ДВА ЗАЛА · ОДНО ПРОСТРАНСТВО · </textPath></text>
-              </svg>
-              <strong>110</strong>
-              <span>М²</span>
-            </div>
-          </div>
-        </section>
-
-        <section className="facts shell" aria-label="Основные преимущества">
-          <div className="fact"><strong>110 м²</strong><span>всё пространство</span></div>
-          <div className="fact"><strong>до 80</strong><span>гостей на фуршете</span></div>
-          <div className="fact fact--icon"><UsersRound size={22} strokeWidth={1.5} /><span>До 35 посадочных мест</span></div>
-          <div className="fact fact--icon"><ChefHat size={22} strokeWidth={1.5} /><span>Полноценная кухня</span></div>
+          <HeroGallery />
         </section>
 
         <section className="section section--formats shell" data-decor="КРЫЛЬЯ">
