@@ -1,8 +1,14 @@
+import { ArrowUpRight } from 'lucide-react';
 import { sitePath } from '@/lib/site';
 
 export function SiteFooter() {
   return (
     <footer className="site-footer">
+      <div className="footer-cta shell">
+        <p className="eyebrow">ВАШЕ СОБЫТИЕ</p>
+        <h2>Планируете событие?</h2>
+        <a href={sitePath('/contacts/#booking')}>Проверить свободную дату <ArrowUpRight size={24} /></a>
+      </div>
       <div className="shell site-footer__inner">
         <a className="brand brand--footer" href={sitePath('/')}>
           <span className="brand__mark">K</span>

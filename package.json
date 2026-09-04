@@ -9,7 +9,7 @@
     "dev": "vinext dev",
     "build": "vinext build && node scripts/prepare-pages.mjs",
     "start": "vinext start",
-    "lint": "oxlint app components/booking-cta.tsx components/page-intro.tsx components/price-calculator.tsx components/site-footer.tsx components/site-header.tsx lib/site.ts scripts/prepare-pages.mjs",
+    "lint": "oxlint app components/booking-cta.tsx components/gallery-lightbox.tsx components/page-intro.tsx components/price-calculator.tsx components/site-footer.tsx components/site-header.tsx lib/site.ts scripts/prepare-pages.mjs",
     "format": "oxfmt"
   },
   "dependencies": {

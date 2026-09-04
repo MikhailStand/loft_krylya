@@ -10,6 +10,12 @@ const formats = [
   { title: 'Фото и видео', meta: 'Контент · каталоги · истории', image: 'photo-1.jpg' },
 ];
 
+const trustPoints = [
+  ['01', 'Уютная атмосфера', 'Гости особенно отмечают оформление студии и то, как по-разному залы выглядят в кадре.'],
+  ['02', 'Внимание к детям', 'В отзывах благодарят за помощь с программой, анимацией и бережное отношение к маленьким гостям.'],
+  ['03', 'Возвращаются снова', 'Студию выбирают для семейных фотосессий и праздников не один раз.'],
+];
+
 export default function Home() {
   return (
     <>
@@ -18,7 +24,11 @@ export default function Home() {
         <section className="hero shell" aria-labelledby="hero-title">
           <div className="hero__copy">
             <p className="eyebrow">LOFT КРЫЛЬЯ · КОРОЛЁВ</p>
-            <h1 id="hero-title">Пространство для событий, которым нужны крылья</h1>
+            <h1 id="hero-title" className="hero-title">
+              <span>Пространство</span>
+              <span>для событий,</span>
+              <span>которым нужны крылья</span>
+            </h1>
             <p className="hero__lead">
               Два интерьерных зала для праздников, съёмок и встреч. Арендуйте
               один зал или всё пространство целиком.
@@ -47,9 +57,12 @@ export default function Home() {
               <figcaption><span>02</span> Тёмный зал</figcaption>
             </figure>
             <div className="hero__stamp" aria-hidden="true">
-              <span>2 ЗАЛА</span>
+              <svg className="hero__stamp-orbit" viewBox="0 0 120 120">
+                <defs><path id="stamp-circle" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" /></defs>
+                <text><textPath href="#stamp-circle">ДВА ЗАЛА · ОДНО ПРОСТРАНСТВО · </textPath></text>
+              </svg>
               <strong>110</strong>
-              <span>М² ВМЕСТЕ</span>
+              <span>М²</span>
             </div>
           </div>
         </section>
@@ -61,7 +74,7 @@ export default function Home() {
           <div className="fact fact--icon"><ChefHat size={22} strokeWidth={1.5} /><span>Полноценная кухня</span></div>
         </section>
 
-        <section className="section shell">
+        <section className="section section--formats shell" data-decor="КРЫЛЬЯ">
           <div className="section-heading">
             <div>
               <p className="eyebrow">ЛЮБОЙ ПОВОД</p>
@@ -88,12 +101,35 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="trust-section shell" aria-labelledby="trust-title" data-decor="5.0">
+          <div className="trust-section__heading">
+            <div>
+              <p className="eyebrow">НАМ ДОВЕРЯЮТ</p>
+              <h2 id="trust-title">Место, куда<br />хочется вернуться</h2>
+            </div>
+            <a href="https://yandex.ru/maps/org/loft_krilya/234746468615/reviews/" target="_blank" rel="noreferrer" className="rating-card" aria-label="Отзывы LOFT Крылья на Яндекс Картах">
+              <strong>5.0</strong>
+              <span>★★★★★</span>
+              <small>315 оценок на Яндекс Картах ↗</small>
+            </a>
+          </div>
+          <div className="trust-grid">
+            {trustPoints.map(([number, title, text]) => (
+              <article className="trust-card" key={number}>
+                <span>{number}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="split-message shell">
-          <div className="split-message__light" style={{ backgroundImage: `url(${assetPath('/images/light-hero.jpg')})` }}>
+          <div className="split-message__light" data-decor="СВЕТ" style={{ backgroundImage: `url(${assetPath('/images/light-4.jpg')})` }}>
             <p className="eyebrow">СВЕТ</p>
             <h2>Воздух,<br />мягкость,<br />естественный свет.</h2>
           </div>
-          <div className="split-message__dark" style={{ backgroundImage: `url(${assetPath('/images/dark-hero.jpg')})` }}>
+          <div className="split-message__dark" data-decor="ХАРАКТЕР" style={{ backgroundImage: `url(${assetPath('/images/dark-3.jpg')})` }}>
             <p className="eyebrow">ХАРАКТЕР</p>
             <h2>Кирпич,<br />графит,<br />атмосфера.</h2>
           </div>

@@ -1,10 +1,10 @@
 /* oxlint-disable next/no-img-element */
 import type { Metadata } from 'next';
 import { BookingCta } from '@/components/booking-cta';
+import { GalleryLightbox } from '@/components/gallery-lightbox';
 import { PageIntro } from '@/components/page-intro';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
-import { assetPath } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Галерея',
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 export const dynamic = 'force-static';
 
-const photos = [
+const photos: [string, string, string][] = [
   ['light-hero.jpg', 'Светлый зал', 'gallery-item--wide'],
   ['dark-hero.jpg', 'Тёмный зал', 'gallery-item--tall'],
   ['kids-1.jpg', 'Детский праздник', ''],
@@ -37,14 +37,7 @@ export default function GalleryPage() {
           aside="Интерьеры · события · съёмки"
         />
 
-        <section className="gallery-grid shell">
-          {photos.map(([image, label, modifier], index) => (
-            <figure className={`gallery-item ${modifier}`} key={image}>
-              <img src={assetPath(`/images/${image}`)} alt={label} />
-              <figcaption><span>{String(index + 1).padStart(2, '0')}</span>{label}</figcaption>
-            </figure>
-          ))}
-        </section>
+        <GalleryLightbox photos={photos} />
 
         <BookingCta title="Представьте здесь своё событие" />
       </main>
