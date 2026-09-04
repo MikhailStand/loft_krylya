@@ -16,7 +16,6 @@ export const dynamic = 'force-static';
 const hallDetails = [
   {
     id: 'light',
-    number: '01',
     title: 'Светлый зал',
     tagline: 'Воздух и естественный свет',
     description: 'Спокойный интерьер для семейных историй, детских праздников, камерных свадеб и светлого контента.',
@@ -26,7 +25,6 @@ const hallDetails = [
   },
   {
     id: 'dark',
-    number: '02',
     title: 'Тёмный зал',
     tagline: 'Фактура и характер',
     description: 'Красный кирпич, бетон, графитовая стена, барная стойка и полноценная кухня для атмосферных событий.',
@@ -51,7 +49,6 @@ export default function HallsPage() {
         <section className="hall-switch shell" aria-label="Быстрый выбор зала">
           {hallDetails.map((hall) => (
             <a href={`#${hall.id}`} key={hall.id}>
-              <span>{hall.number}</span>
               <strong>{hall.title}</strong>
               <small>{hall.tagline}</small>
               <ArrowUpRight size={18} />
@@ -71,7 +68,7 @@ export default function HallsPage() {
               <ul>
                 {hall.features.map((feature) => <li key={feature}>{feature}</li>)}
               </ul>
-              <a className="text-link" href={sitePath('/contacts/#booking')}>Узнать свободное время ↗</a>
+              <a className="button button--secondary" href={sitePath('/contacts/#booking')}>Узнать свободное время <ArrowUpRight size={17} /></a>
             </div>
             <div className="hall-detail__gallery">
               {hall.gallery.map((image, index) => (

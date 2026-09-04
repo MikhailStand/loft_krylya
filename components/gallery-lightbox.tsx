@@ -50,7 +50,7 @@ export function GalleryLightbox({ photos }: { photos: Photo[] }) {
           <button className="lightbox__nav lightbox__nav--prev" type="button" aria-label="Предыдущая фотография" onClick={() => show(-1)}><ChevronLeft /></button>
           <figure>
             <img src={assetPath(`/images/${photos[active][0]}`)} alt={photos[active][1]} />
-            <figcaption>{String(active + 1).padStart(2, '0')} / {String(photos.length).padStart(2, '0')} · {photos[active][1]}</figcaption>
+            <figcaption>{photos[active][1]}</figcaption>
           </figure>
           <button className="lightbox__nav lightbox__nav--next" type="button" aria-label="Следующая фотография" onClick={() => show(1)}><ChevronRight /></button>
         </dialog>

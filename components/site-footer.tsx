@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="footer-cta shell">
         <p className="eyebrow">ВАШЕ СОБЫТИЕ</p>
         <h2>Планируете событие?</h2>
-        <a href={sitePath('/contacts/#booking')}>Проверить свободную дату <ArrowUpRight size={24} /></a>
+        <a className="button button--light footer-cta__button" href={sitePath('/contacts/#booking')}>Проверить свободную дату <ArrowUpRight size={20} /></a>
       </div>
       <div className="shell site-footer__inner">
         <a className="brand brand--footer" href={sitePath('/')}>

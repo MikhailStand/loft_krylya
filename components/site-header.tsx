@@ -1,11 +1,12 @@
 'use client';
 
-import { Menu, Phone, X } from 'lucide-react';
+import { ArrowUpRight, Menu, Phone, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { sitePath } from '@/lib/site';
 
 const navigation = [
+  ['Главная', '/'],
   ['Залы', '/halls/'],
   ['Форматы', '/events/'],
   ['Цены', '/prices/'],
@@ -63,9 +64,9 @@ export function SiteHeader() {
             <button type="button" aria-label="Закрыть меню" onClick={() => setMenuOpen(false)}><X /></button>
           </div>
           <nav aria-label="Мобильная навигация">
-            {navigation.map(([label, href], index) => (
+            {navigation.map(([label, href]) => (
               <a className={isCurrent(href) ? 'is-active' : undefined} href={sitePath(href)} key={href} aria-current={isCurrent(href) ? 'page' : undefined}>
-                <span>0{index + 1}</span>{label}
+                {label}
               </a>
             ))}
           </nav>
@@ -76,7 +77,7 @@ export function SiteHeader() {
           <a className="button button--primary button--booking" href={sitePath('/contacts/#booking')}>Проверить дату</a>
         </aside>
       </header>
-      <a className="mobile-booking-bar" href={sitePath('/contacts/#booking')}>Проверить дату <span aria-hidden="true">↗</span></a>
+      <a className="mobile-booking-bar" href={sitePath('/contacts/#booking')}>Проверить дату <ArrowUpRight size={18} /></a>
     </>
   );
 }

@@ -32,14 +32,13 @@ export default function ContactsPage() {
               <span><MapPin size={19} /> <span><small>Адрес</small>Королёв, ул. Горького, 79, корп. 13</span></span>
               <span><Clock3 size={19} /> <span><small>Режим работы</small>По предварительной записи</span></span>
             </div>
-            <a className="text-link" href="https://yandex.ru/maps/?text=Королёв%2C%20улица%20Горького%2C%2079%2C%20корпус%2013" target="_blank" rel="noreferrer">
-              Построить маршрут ↗
+            <a className="button button--secondary" href="https://yandex.ru/maps/?text=Королёв%2C%20улица%20Горького%2C%2079%2C%20корпус%2013" target="_blank" rel="noreferrer">
+              Построить маршрут <ArrowUpRight size={17} />
             </a>
           </div>
 
           <form className="booking-form" action="mailto:loft_krilya@mail.ru" method="post" encType="text/plain">
             <div className="booking-form__heading">
-              <span>01</span>
               <h2>Проверить дату</h2>
             </div>
             <div className="booking-form__grid">

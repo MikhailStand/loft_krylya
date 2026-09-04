@@ -1,5 +1,5 @@
 /* oxlint-disable next/no-img-element */
-import { ArrowUpRight, ChefHat, MapPin, UsersRound } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, ChefHat, MapPin, UsersRound } from 'lucide-react';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 import { assetPath, sitePath } from '@/lib/site';
@@ -11,9 +11,9 @@ const formats = [
 ];
 
 const trustPoints = [
-  ['01', 'Уютная атмосфера', 'Гости особенно отмечают оформление студии и то, как по-разному залы выглядят в кадре.'],
-  ['02', 'Внимание к детям', 'В отзывах благодарят за помощь с программой, анимацией и бережное отношение к маленьким гостям.'],
-  ['03', 'Возвращаются снова', 'Студию выбирают для семейных фотосессий и праздников не один раз.'],
+  ['Уютная атмосфера', 'Гости особенно отмечают оформление студии и то, как по-разному залы выглядят в кадре.'],
+  ['Внимание к детям', 'В отзывах благодарят за помощь с программой, анимацией и бережное отношение к маленьким гостям.'],
+  ['Возвращаются снова', 'Студию выбирают для семейных фотосессий и праздников не один раз.'],
 ];
 
 export default function Home() {
@@ -33,13 +33,11 @@ export default function Home() {
               Два интерьерных зала для праздников, съёмок и встреч. Арендуйте
               один зал или всё пространство целиком.
             </p>
-            <div className="hero__actions">
-              <a className="button button--primary" href={sitePath('/contacts/#booking')}>
-                Проверить дату <ArrowUpRight size={17} strokeWidth={1.8} />
-              </a>
-              <a className="text-link" href={sitePath('/halls/')}>
-                Посмотреть залы <span aria-hidden="true">↗</span>
-              </a>
+            <div className="hero__actions hero-quick-actions" aria-label="Быстрые ссылки">
+              <a className="button button--secondary" href={sitePath('/prices/')}>Цены <ArrowRight size={17} /></a>
+              <a className="button button--secondary" href={sitePath('/halls/')}>Залы <ArrowRight size={17} /></a>
+              <a className="button button--secondary" href={sitePath('/events/')}>Форматы <ArrowRight size={17} /></a>
+              <a className="button button--primary" href={sitePath('/contacts/#booking')}>Записаться <ArrowUpRight size={17} /></a>
             </div>
             <div className="hero__location">
               <MapPin size={16} strokeWidth={1.7} />
@@ -50,11 +48,11 @@ export default function Home() {
           <div className="hero__visual" aria-label="Светлый и тёмный залы">
             <figure className="hero-shot hero-shot--light">
               <img src={assetPath('/images/light-hero.jpg')} alt="Светлый зал LOFT Крылья" />
-              <figcaption><span>01</span> Светлый зал</figcaption>
+              <figcaption>Светлый зал</figcaption>
             </figure>
             <figure className="hero-shot hero-shot--dark">
               <img src={assetPath('/images/dark-hero.jpg')} alt="Тёмный зал LOFT Крылья" />
-              <figcaption><span>02</span> Тёмный зал</figcaption>
+              <figcaption>Тёмный зал</figcaption>
             </figure>
             <div className="hero__stamp" aria-hidden="true">
               <svg className="hero__stamp-orbit" viewBox="0 0 120 120">
@@ -109,13 +107,12 @@ export default function Home() {
             <a href="https://yandex.ru/maps/org/loft_krilya/234746468615/reviews/" target="_blank" rel="noreferrer" className="rating-card" aria-label="Отзывы LOFT Крылья на Яндекс Картах">
               <strong>5.0</strong>
               <span>★★★★★</span>
-              <small>315 оценок на Яндекс Картах ↗</small>
+              <small>315 оценок на Яндекс Картах <ArrowUpRight size={12} /></small>
             </a>
           </div>
           <div className="trust-grid">
-            {trustPoints.map(([number, title, text]) => (
-              <article className="trust-card" key={number}>
-                <span>{number}</span>
+            {trustPoints.map(([title, text]) => (
+              <article className="trust-card" key={title}>
                 <h3>{title}</h3>
                 <p>{text}</p>
               </article>
@@ -132,7 +129,7 @@ export default function Home() {
             <p className="eyebrow">ХАРАКТЕР</p>
             <h2>Кирпич,<br />графит,<br />атмосфера.</h2>
           </div>
-          <a className="split-message__link" href={sitePath('/halls/')}>
+          <a className="button button--light split-message__link" href={sitePath('/halls/')}>
             Сравнить залы <ArrowUpRight size={18} />
           </a>
         </section>
