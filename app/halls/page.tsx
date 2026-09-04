@@ -1,6 +1,6 @@
 /* oxlint-disable next/no-img-element */
 import type { Metadata } from 'next';
-import { ArrowUpRight, ChefHat, Ruler, Sun, Volume2 } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { BookingCta } from '@/components/booking-cta';
 import { PageIntro } from '@/components/page-intro';
 import { SiteFooter } from '@/components/site-footer';
@@ -77,20 +77,6 @@ export default function HallsPage() {
             </div>
           </section>
         ))}
-
-        <section className="all-space shell">
-          <div>
-            <p className="eyebrow">ОБА ЗАЛА</p>
-            <h2>Одно большое<br />пространство</h2>
-          </div>
-          <p>Для событий, где нужны отдельная банкетная зона и место для программы, танцев или съёмки.</p>
-          <div className="all-space__facts">
-            <span><Ruler size={21} />110 м²</span>
-            <span><Sun size={21} />Два интерьера</span>
-            <span><Volume2 size={21} />Свет и звук</span>
-            <span><ChefHat size={21} />Кухня</span>
-          </div>
-        </section>
 
         <BookingCta title="Выберите настроение вашего события" />
       </main>

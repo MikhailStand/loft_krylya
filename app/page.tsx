@@ -49,6 +49,20 @@ export default function Home() {
           <HeroGallery />
         </section>
 
+        <section className="about-section shell" aria-labelledby="about-title">
+          <div className="about-section__image">
+            <img src={assetPath('/images/light-2.jpg')} alt="Интерьер студии LOFT Крылья" />
+          </div>
+          <div className="about-section__copy">
+            <p className="eyebrow">О СТУДИИ</p>
+            <h2 id="about-title">Здесь легко<br />быть вместе</h2>
+            <p>«Крылья» — камерная студия в Королёве, созданная для тёплых встреч, красивых кадров и событий без лишней суеты.</p>
+            <p>Мы не навязываем готовый сценарий: помогаем выбрать зал, расставить мебель и собрать пространство именно под вашу идею.</p>
+            <div className="about-section__note">Светлая атмосфера, два разных интерьера и внимательная команда рядом.</div>
+            <a className="button button--secondary" href={sitePath('/halls/')}>Познакомиться с залами <ArrowUpRight size={18} /></a>
+          </div>
+        </section>
+
         <section className="section section--formats shell" data-decor="КРЫЛЬЯ">
           <div className="section-heading">
             <div>

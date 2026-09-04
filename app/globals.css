@@ -1021,3 +1021,168 @@ button, input, select, textarea { font: inherit; }
   .hero-gallery__track,
   .hero-gallery__slide img { transition: none !important; }
 }
+
+/* Readability, equal format cards and compact trust section */
+.brand__name small { font-size: 12px; }
+.desktop-nav a { font-size: 14px; }
+.phone-link { font-size: 14px; }
+.button { font-size: 14px; }
+.eyebrow { font-size: 12px; line-height: 1.5; }
+.hero__lead { font-size: 16px; }
+.hero__location { font-size: 13px; }
+.hero-gallery__slide figcaption { font-size: 13px; }
+.section-heading > p { font-size: 16px; line-height: 1.75; }
+.format-card__copy span { font-size: 12px; line-height: 1.5; }
+.site-footer p,
+.site-footer__contacts { font-size: 14px; }
+.page-intro__lead p { font-size: 16px; line-height: 1.75; }
+.page-intro__lead small { font-size: 12px; }
+.booking-cta > p:not(.eyebrow) { font-size: 15px; }
+.hall-switch small { font-size: 13px; }
+.hall-detail__content > p:not(.eyebrow) { font-size: 15px; }
+.hall-detail__content li { font-size: 14px; }
+.event-row__content span { font-size: 12px; }
+.event-row__content p { font-size: 15px; line-height: 1.7; }
+.calculator label > span,
+.booking-form label > span { font-size: 12px; }
+.calculator select,
+.calculator input,
+.booking-form input,
+.booking-form select,
+.booking-form textarea { font-size: 15px; }
+.calculator__result > span,
+.calculator__result small { font-size: 12px; }
+.rate-card__price span { font-size: 13px; }
+.rate-card > p:last-child { font-size: 14px; }
+.included li { font-size: 14px; }
+.faq__list summary { font-size: 15px; }
+.faq__list details p { font-size: 14px; }
+.gallery-item figcaption { font-size: 13px; }
+.contact-card__links > a,
+.contact-card__links > span { font-size: 14px; }
+.contact-card__links small,
+.booking-form__note { font-size: 11px; }
+.route-card__copy > p:last-child { font-size: 14px; }
+.rating-card small { font-size: 12px; }
+.trust-card p { font-size: 14px; line-height: 1.7; }
+
+.about-section {
+  position: relative;
+  padding-block: 105px;
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  align-items: stretch;
+  background: var(--paper-strong);
+  box-shadow: 0 0 0 100vmax var(--paper-strong);
+  clip-path: inset(0 -100vmax);
+}
+.about-section::after {
+  content: 'КРЫЛЬЯ';
+  position: absolute;
+  right: -1vw;
+  bottom: 15px;
+  color: rgba(104,115,100,.065);
+  font: 600 clamp(95px, 13vw, 190px)/.75 'Cormorant Garamond', serif;
+  letter-spacing: -.055em;
+  pointer-events: none;
+}
+.about-section__image {
+  position: relative;
+  z-index: 1;
+  min-height: 500px;
+  overflow: hidden;
+}
+.about-section__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255,255,255,.38);
+  pointer-events: none;
+}
+.about-section__image img { width: 100%; height: 100%; object-fit: cover; }
+.about-section__copy {
+  position: relative;
+  z-index: 1;
+  padding: 54px clamp(44px, 6vw, 92px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background: rgba(255,253,249,.72);
+}
+.about-section__copy h2 {
+  margin: 0 0 30px;
+  font: 500 clamp(54px, 5vw, 74px)/.91 'Cormorant Garamond', serif;
+  letter-spacing: -.04em;
+}
+.about-section__copy > p:not(.eyebrow) {
+  max-width: 610px;
+  margin: 0 0 16px;
+  color: #5f625b;
+  font-size: 16px;
+  line-height: 1.75;
+}
+.about-section__note {
+  max-width: 590px;
+  margin: 16px 0 30px;
+  padding: 8px 0 8px 22px;
+  border-left: 2px solid var(--sage-dark);
+  font: 500 22px/1.32 'Cormorant Garamond', serif;
+}
+
+.format-grid { align-items: stretch; }
+.format-card,
+.format-card:first-child,
+.format-card:nth-child(2),
+.format-card:nth-child(3) {
+  min-height: 520px;
+  height: 520px;
+  margin-top: 0;
+}
+
+.trust-section { padding: 78px 70px 64px; }
+.trust-section__heading { gap: 60px; }
+.trust-section h2 { font-size: clamp(48px, 4.6vw, 66px); }
+.rating-card { width: 220px; min-height: 160px; padding: 24px; }
+.rating-card strong { font-size: 55px; }
+.rating-card span { margin-top: 12px; }
+.trust-grid { margin-top: 40px; }
+.trust-card { min-height: 165px; padding-top: 24px; padding-bottom: 20px; }
+.trust-card h3 { margin: 16px 0 12px; }
+
+@media (max-width: 760px) {
+  .button { font-size: 13px; }
+  .eyebrow { font-size: 12px; }
+  .hero__lead { font-size: 14px; }
+  .hero__location { font-size: 12px; }
+  .hero-gallery__slide figcaption { font-size: 12px; }
+  .page-intro__lead p { font-size: 14px; }
+  .page-intro__lead small { font-size: 11px; }
+  .section-heading > p,
+  .about-section__copy > p:not(.eyebrow) { font-size: 14px; }
+  .about-section {
+    padding-block: 68px;
+    grid-template-columns: 1fr;
+  }
+  .about-section::after { bottom: 8px; font-size: 82px; }
+  .about-section__image { min-height: 285px; }
+  .about-section__copy { padding: 42px 24px 46px; }
+  .about-section__copy h2 { margin-bottom: 24px; font-size: 48px; }
+  .about-section__note { margin-bottom: 26px; font-size: 20px; }
+  .about-section__copy .button { width: 100%; }
+  .format-card,
+  .format-card:first-child,
+  .format-card:nth-child(2),
+  .format-card:nth-child(3) { height: 410px; min-height: 410px; }
+  .trust-section { padding: 56px 14px 48px; }
+  .trust-section__heading { gap: 28px; }
+  .trust-section h2 { font-size: 42px; }
+  .rating-card { min-height: 135px; padding: 22px; }
+  .trust-grid { margin-top: 30px; }
+  .trust-card,
+  .trust-card + .trust-card { min-height: 180px; padding-top: 22px; }
+  .trust-card h3 { margin-top: 12px; }
+  .mobile-menu__top { font-size: 12px; }
+  .mobile-menu__details p { font-size: 12px; }
+  .mobile-booking-bar { font-size: 14px; }
+}
