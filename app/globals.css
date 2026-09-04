@@ -1637,3 +1637,76 @@ button, input, select, textarea { font: inherit; }
   .price-jump a { padding-inline: 16px; font-size: 13px; }
   .availability-call__button strong { font-size: 25px; }
 }
+
+/* Mobile flow fixes: full-width about, stacked trust points and dense gallery */
+@media (max-width: 760px) {
+  .about-section {
+    padding-block: 52px 64px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .about-section__image {
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    border-radius: 18px;
+  }
+  .about-section__image img { object-position: center 42%; }
+  .about-section__copy {
+    width: 100%;
+    padding: 34px 4px 0;
+  }
+  .about-section__copy::before {
+    width: 54px;
+    margin-bottom: 22px;
+  }
+  .about-section__copy h2 {
+    max-width: 330px;
+    font-size: 46px;
+  }
+
+  .trust-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+  .trust-card,
+  .trust-card + .trust-card {
+    width: 100%;
+    min-height: 0;
+    padding: 27px 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(38,37,34,.18);
+    scroll-snap-align: none;
+  }
+  .trust-card:last-child { border-bottom: 0; }
+  .trust-card h3 { margin: 0 0 11px; font-size: 30px; }
+  .trust-card p { max-width: none; }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 190px;
+    grid-auto-flow: row dense;
+    gap: 8px;
+  }
+  .gallery-item,
+  .gallery-item--wide,
+  .gallery-item--tall,
+  .gallery-item--portrait {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .gallery-item figcaption {
+    left: 14px;
+    right: 14px;
+    bottom: 13px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 390px) {
+  .about-section__copy h2 { font-size: 43px; }
+  .gallery-grid { grid-auto-rows: 174px; }
+}
