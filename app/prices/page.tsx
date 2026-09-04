@@ -44,21 +44,18 @@ export default function PricesPage() {
 
         <section className="rate-grid shell">
           <article className="rate-card">
-            <span className="rate-card__index">01</span>
             <p className="eyebrow">ФОТО И ВИДЕО</p>
             <h2>Один зал</h2>
             <div className="rate-card__price"><strong>от 2 000 ₽</strong><span>/ час</span></div>
             <p>Интерьер, фоны, оборудование и реквизит для съёмки.</p>
           </article>
           <article className="rate-card rate-card--accent">
-            <span className="rate-card__index">02</span>
             <p className="eyebrow">ПРАЗДНИКИ</p>
             <h2>Один зал</h2>
             <div className="rate-card__price"><strong>от 2 700 ₽</strong><span>/ час</span></div>
             <p>Мебель, посуда и всё необходимое для камерного события.</p>
           </article>
           <article className="rate-card rate-card--dark">
-            <span className="rate-card__index">03</span>
             <p className="eyebrow">ВСЁ ПРОСТРАНСТВО</p>
             <h2>Оба зала</h2>
             <div className="rate-card__price"><strong>от 3 300 ₽</strong><span>/ час</span></div>

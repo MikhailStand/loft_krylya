@@ -63,7 +63,6 @@ export default function HallsPage() {
           <section className={`hall-detail hall-detail--${hall.id} shell`} id={hall.id} key={hall.id}>
             <div className="hall-detail__hero">
               <img src={assetPath(`/images/${hall.image}`)} alt={`${hall.title} LOFT Крылья`} />
-              <span>{hall.number}</span>
             </div>
             <div className="hall-detail__content">
               <p className="eyebrow">{hall.tagline}</p>

@@ -87,10 +87,9 @@ export default function Home() {
           </div>
 
           <div className="format-grid">
-            {formats.map((item, index) => (
+            {formats.map((item) => (
               <a className="format-card" href={sitePath('/events/')} key={item.title}>
                 <img src={assetPath(`/images/${item.image}`)} alt="" />
-                <span className="format-card__number">0{index + 1}</span>
                 <div className="format-card__copy">
                   <span>{item.meta}</span>
                   <h3>{item.title}</h3>

@@ -7,14 +7,15 @@ export function PageIntro({ eyebrow, title, lead, aside }: {
   aside?: string;
 }) {
   return (
-    <section className="page-intro shell">
-      <div>
+    <section className="page-intro shell" data-decor={eyebrow}>
+      <div className="page-intro__title">
         <p className="eyebrow">{eyebrow}</p>
         <h1>{title}</h1>
       </div>
       <div className="page-intro__lead">
+        <span className="page-intro__mark" aria-hidden="true">К</span>
         <p>{lead}</p>
-        {aside && <span>{aside}</span>}
+        {aside && <small>{aside}</small>}
       </div>
     </section>
   );

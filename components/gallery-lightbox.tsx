@@ -39,7 +39,7 @@ export function GalleryLightbox({ photos }: { photos: Photo[] }) {
             <button type="button" onClick={() => setActive(index)} aria-label={`Открыть фото: ${label}`}>
               <img src={assetPath(`/images/${image}`)} alt={label} />
             </button>
-            <figcaption><span>{String(index + 1).padStart(2, '0')}</span>{label}</figcaption>
+            <figcaption>{label}</figcaption>
           </figure>
         ))}
       </section>
