@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ArrowUpRight, Clock3, Mail, MapPin, Phone } from 'lucide-react';
+import { ArrowUpRight, Check, Clock3, Mail, MapPin, Phone, PhoneCall } from 'lucide-react';
 import { PageIntro } from '@/components/page-intro';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
@@ -18,8 +18,8 @@ export default function ContactsPage() {
         <PageIntro
           eyebrow="КОНТАКТЫ"
           title={<>Давайте обсудим<br />ваше событие</>}
-          lead="Напишите дату, формат и количество гостей. Администратор уточнит свободное время и вернётся с расчётом."
-          aside="Обычно отвечаем в течение рабочего дня"
+          lead="Позвоните администратору — вместе проверим дату, выберем зал и уточним стоимость вашего события."
+          aside="Студия работает по предварительной записи"
         />
 
         <section className="contact-layout shell" id="booking">
@@ -37,32 +37,27 @@ export default function ContactsPage() {
             </a>
           </div>
 
-          <form className="booking-form" action="mailto:loft_krilya@mail.ru" method="post" encType="text/plain">
-            <div className="booking-form__heading">
-              <h2>Проверить дату</h2>
+          <div className="availability-call">
+            <div className="availability-call__heading">
+              <p className="eyebrow">ПРОВЕРИТЬ ДАТУ</p>
+              <h2>Позвоните<br />администратору</h2>
+              <p>Так вы сразу узнаете, свободна ли нужная дата, и получите ответы по залам и стоимости.</p>
             </div>
-            <div className="booking-form__grid">
-              <label><span>Ваше имя</span><input name="name" type="text" placeholder="Как к вам обращаться?" required /></label>
-              <label><span>Телефон</span><input name="phone" type="tel" placeholder="+7 999 000-00-00" required /></label>
-              <label><span>Дата</span><input name="date" type="date" /></label>
-              <label><span>Количество гостей</span><input name="guests" type="number" min="1" placeholder="Например, 25" /></label>
-              <label className="booking-form__wide">
-                <span>Формат</span>
-                <select name="format" defaultValue="">
-                  <option value="" disabled>Выберите формат</option>
-                  <option>Праздник / день рождения</option>
-                  <option>Детское событие</option>
-                  <option>Фото- или видеосъёмка</option>
-                  <option>Свадьба / девичник</option>
-                  <option>Корпоратив / мастер-класс</option>
-                  <option>Другое</option>
-                </select>
-              </label>
-              <label className="booking-form__wide"><span>Расскажите об идее</span><textarea name="message" rows={4} placeholder="Что планируете и какой зал понравился?" /></label>
+            <a className="availability-call__button" href="tel:+79260463955">
+              <span><PhoneCall size={24} /> Позвонить</span>
+              <strong>+7 926 046-39-55</strong>
+              <ArrowUpRight size={22} />
+            </a>
+            <div className="availability-call__memo">
+              <p>Что желательно уточнить перед звонком</p>
+              <ul>
+                <li><Check size={17} />Желаемую дату и время</li>
+                <li><Check size={17} />Формат события</li>
+                <li><Check size={17} />Примерное количество гостей</li>
+                <li><Check size={17} />Один зал или всё пространство</li>
+              </ul>
             </div>
-            <button className="button button--primary" type="submit">Отправить заявку <ArrowUpRight size={18} /></button>
-            <small className="booking-form__note">Нажимая кнопку, вы соглашаетесь на обработку контактных данных.</small>
-          </form>
+          </div>
         </section>
 
         <section className="route-card shell">
