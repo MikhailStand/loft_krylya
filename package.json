@@ -1,0 +1,35 @@
+{
+  "name": "loft-krylya",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "vinext dev",
+    "build": "vinext build && node scripts/prepare-pages.mjs",
+    "start": "vinext start",
+    "lint": "oxlint app components/booking-cta.tsx components/page-intro.tsx components/price-calculator.tsx components/site-footer.tsx components/site-header.tsx lib/site.ts scripts/prepare-pages.mjs",
+    "format": "oxfmt"
+  },
+  "dependencies": {
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "react-server-dom-webpack": "19.2.6",
+    "lucide-react": "1.31.0",
+    "vinext": "1.0.0-beta.5"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "@vitejs/plugin-rsc": "0.5.26",
+    "oxfmt": "0.61.0",
+    "oxlint": "1.76.0",
+    "oxlint-tsgolint": "7.0.2001",
+    "typescript": "5.9.3",
+    "vite": "8.0.13"
+  },
+  "type": "module"
+}
