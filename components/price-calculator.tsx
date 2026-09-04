@@ -18,28 +18,28 @@ export function PriceCalculator() {
   return (
     <div className="calculator">
       <div className="calculator__fields">
-        <label>
+        <label className="calculator__field">
           <span>Формат</span>
           <select value={type} onChange={(event) => setType(event.target.value as 'photo' | 'event')}>
             <option value="event">Праздник / мероприятие</option>
             <option value="photo">Фото- или видеосъёмка</option>
           </select>
         </label>
-        <label>
+        <label className="calculator__field">
           <span>Пространство</span>
           <select value={space} onChange={(event) => setSpace(event.target.value as 'hall' | 'all')}>
             <option value="all">Оба зала</option>
             <option value="hall">Один зал</option>
           </select>
         </label>
-        <label>
+        <label className="calculator__field">
           <span>День</span>
           <select value={day} onChange={(event) => setDay(event.target.value as 'weekday' | 'weekend')}>
             <option value="weekend">Выходной</option>
             <option value="weekday">Будний</option>
           </select>
         </label>
-        <label>
+        <label className="calculator__field">
           <span>Количество часов</span>
           <input min="1" max="12" type="number" value={hours} onChange={(event) => setHours(Math.max(1, Number(event.target.value) || 1))} />
         </label>

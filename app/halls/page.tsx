@@ -64,7 +64,7 @@ export default function HallsPage() {
             <div className="hall-detail__content">
               <p className="eyebrow">{hall.tagline}</p>
               <h2>{hall.title}</h2>
-              <p>{hall.description}</p>
+              <p className="hall-detail__description">{hall.description}</p>
               <ul>
                 {hall.features.map((feature) => <li key={feature}>{feature}</li>)}
               </ul>

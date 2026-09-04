@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Check, Plus } from 'lucide-react';
+import { ArrowDown, Check, Plus } from 'lucide-react';
 import { BookingCta } from '@/components/booking-cta';
 import { PageIntro } from '@/components/page-intro';
 import { PriceCalculator } from '@/components/price-calculator';
@@ -34,7 +34,13 @@ export default function PricesPage() {
           aside="Тарифы в макете требуют актуализации"
         />
 
-        <section className="price-section shell">
+        <nav className="price-jump shell" aria-label="Навигация по разделу цен">
+          <a href="#calculator">Расчёт <ArrowDown size={18} /></a>
+          <a href="#rates">Цены <ArrowDown size={18} /></a>
+          <a href="#faq">Частые вопросы <ArrowDown size={18} /></a>
+        </nav>
+
+        <section className="price-section shell" id="calculator">
           <div className="price-section__heading">
             <p className="eyebrow">РАССЧИТАТЬ</p>
             <h2>Предварительная стоимость</h2>
@@ -42,7 +48,7 @@ export default function PricesPage() {
           <PriceCalculator />
         </section>
 
-        <section className="rate-grid shell">
+        <section className="rate-grid shell" id="rates">
           <article className="rate-card">
             <p className="eyebrow">ФОТО И ВИДЕО</p>
             <h2>Один зал</h2>
@@ -73,7 +79,7 @@ export default function PricesPage() {
           </ul>
         </section>
 
-        <section className="faq shell">
+        <section className="faq shell" id="faq">
           <div className="faq__heading">
             <p className="eyebrow">ВАЖНО ЗНАТЬ</p>
             <h2>Частые вопросы</h2>
